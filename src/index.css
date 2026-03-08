@@ -37,9 +37,9 @@
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 40%), hsl(200 80% 50%));
+    --gradient-primary: linear-gradient(100deg, hsl(198, 82%, 30%), hsl(200, 47%, 22%));
     --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 25% 94%) 100%);
-    --navbg: linear-gradient(180deg, hsl(210, 58%, 40%), hsl(210 50% 40%));
+    --navbg: linear-gradient(180deg, hsl(210, 58%, 40%), hsl(210, 62%, 77%));
     --shadow-glow: 0 0 40px hsl(175 80% 40% / 0.3);
     --shadow-card: 0 4px 20px hsl(220 20% 10% / 0.08);
     --shadow-card-hover: 0 8px 30px hsl(220 20% 10% / 0.12);
@@ -84,7 +84,7 @@
     --ring: 175 80% 50%;
 
     /* Custom tokens dark */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(191, 43%, 70%), hsl(200, 29%, 57%));
     --gradient-hero: linear-gradient(180deg, hsl(220 25% 6%) 0%, hsl(220 30% 10%) 100%);
     --navbg: linear-gradient(180deg, hsl(210, 50%, 40%), hsl(210, 13%, 9%));
     --shadow-glow: 0 0 60px hsl(175 80% 50% / 0.4);
@@ -180,4 +180,7 @@
       opacity: 0.7;
     }
   }
+}
+.navbg{
+  background: var(--navbg);
 }
