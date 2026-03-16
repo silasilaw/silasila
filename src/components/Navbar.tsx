@@ -74,12 +74,12 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="relative text-sm font-semibold text-gray-300 hover:text-white transition group"
+                className="relative text-sm font-semibold text-gray-300 hover:text-blue-300 transition group"
               >
                 {item.label}
 
                 {/* underline animation */}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
 
