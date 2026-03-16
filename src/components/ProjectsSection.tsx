@@ -1,40 +1,45 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Play } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { ExternalLink, Github, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const projects = [
   {
     title: 'E-Commerce Platform',
-    description: 'Platform e-commerce modern dengan fitur lengkap termasuk payment gateway, inventory management, dan analytics dashboard.',
+    description:
+      'Platform e-commerce modern dengan fitur lengkap termasuk payment gateway, inventory management, dan analytics dashboard.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-    image: '🛒',
+    images: ['🛒', '💳', '📦'],
     color: 'from-blue-500/20 to-cyan-500/20',
     github: '#',
     demo: '#',
   },
   {
     title: 'Learning Management System',
-    description: 'Platform pembelajaran online dengan video streaming, quiz interaktif, dan progress tracking.',
+    description:
+      'Platform pembelajaran online dengan video streaming, quiz interaktif, dan progress tracking.',
     tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
-    image: '📚',
+    images: ['📚', '🎓', '🧠'],
     color: 'from-purple-500/20 to-pink-500/20',
     github: '#',
     demo: '#',
   },
   {
     title: 'Social Media Dashboard',
-    description: 'Dashboard analytics untuk social media dengan real-time data visualization dan reporting.',
+    description:
+      'Dashboard analytics untuk social media dengan real-time data visualization dan reporting.',
     tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
-    image: '📊',
+    images: ['📊', '📈', '📉'],
     color: 'from-orange-500/20 to-red-500/20',
     github: '#',
     demo: '#',
   },
   {
     title: 'AI Content Generator',
-    description: 'Tool untuk generate konten menggunakan AI dengan integrasi berbagai model language.',
+    description:
+      'Tool untuk generate konten menggunakan AI dengan integrasi berbagai model language.',
     tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
-    image: '🤖',
+    images: ['🤖', '🧠', '✨'],
     color: 'from-green-500/20 to-teal-500/20',
     github: '#',
     demo: '#',
@@ -43,7 +48,7 @@ const projects = [
     title: 'Video Editing Tutorial',
     description: 'Seri tutorial video editing dengan 100+ episode dan 10k+ subscribers.',
     tags: ['Premiere Pro', 'After Effects', 'YouTube'],
-    image: '🎬',
+    images: ['🎬', '🎥', '📺'],
     color: 'from-red-500/20 to-orange-500/20',
     isContent: true,
     youtube: '#',
@@ -52,12 +57,71 @@ const projects = [
     title: 'Coding Tips & Tricks',
     description: 'Konten tips programming dan best practices untuk developer Indonesia.',
     tags: ['Instagram', 'TikTok', 'YouTube Shorts'],
-    image: '💡',
+    images: ['💡', '👨‍💻', '⚡'],
     color: 'from-cyan-500/20 to-blue-500/20',
     isContent: true,
     youtube: '#',
   },
 ];
+
+function CardCarousel({ images, color }) {
+  const [index, setIndex] = useState(0);
+
+  const next = () => {
+    setIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prev = () => {
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  // autoplay
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative aspect-video rounded-xl overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={(e, info) => {
+            if (info.offset.x < -50) next();
+            if (info.offset.x > 50) prev();
+          }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.4 }}
+          className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br ${color}`}
+        >
+          <span className="text-6xl">{images[index]}</span>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* navigation */}
+      <button
+        onClick={prev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur p-1 rounded-full"
+      >
+        <ChevronLeft size={18} />
+      </button>
+
+      <button
+        onClick={next}
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur p-1 rounded-full"
+      >
+        <ChevronRight size={18} />
+      </button>
+    </div>
+  );
+}
 
 export default function ProjectsSection() {
   return (
@@ -88,11 +152,10 @@ export default function ProjectsSection() {
               className="group"
             >
               <div className="h-full p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
-                <div className={`aspect-video rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${project.color}`}>
-                  <span className="text-6xl">{project.image}</span>
-                </div>
                 
-                <div className="space-y-3">
+                <CardCarousel images={project.images} color={project.color} />
+
+                <div className="space-y-3 mt-4">
                   <div className="flex items-center gap-2">
                     {project.isContent && (
                       <span className="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary font-medium">
@@ -103,11 +166,11 @@ export default function ProjectsSection() {
                       {project.title}
                     </h3>
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground line-clamp-2">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
@@ -118,7 +181,7 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex gap-2 pt-2">
                     {project.github && (
                       <Button variant="outline" size="sm" className="rounded-full" asChild>
@@ -128,6 +191,7 @@ export default function ProjectsSection() {
                         </a>
                       </Button>
                     )}
+
                     {project.demo && (
                       <Button size="sm" className="rounded-full" asChild>
                         <a href={project.demo}>
@@ -136,6 +200,7 @@ export default function ProjectsSection() {
                         </a>
                       </Button>
                     )}
+
                     {project.youtube && (
                       <Button size="sm" className="rounded-full" asChild>
                         <a href={project.youtube}>
@@ -146,6 +211,7 @@ export default function ProjectsSection() {
                     )}
                   </div>
                 </div>
+
               </div>
             </motion.div>
           ))}

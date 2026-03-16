@@ -29,7 +29,7 @@ export default function HeroSection() {
             className="flex-shrink-0"
           >
             <img
-              src="/profile porto 1.jpeg"
+              src="/porto 2.jpeg"
               alt="Arsila"
               className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-primary shadow-lg"
             />
