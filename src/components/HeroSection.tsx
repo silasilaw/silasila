@@ -53,9 +53,9 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              Arsila Humaira
+              
               <br />
-              <span className="text-gradient">&amp; Arsila Humaira</span>
+              <span className="text-gradient"> Arsila Humaira</span>
             </motion.h1>
 
             <motion.p
@@ -64,8 +64,8 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg md:text-xl text-muted-foreground mb-8"
             >
-              Saya membangun aplikasi web yang indah dan fungsional,
-              serta membagikan pengetahuan melalui konten yang inspiratif.
+              Exploring creativity through dancing and drawing, while enjoying
+               the beauty of nature and finding inspiration in simple, peaceful moments
             </motion.p>
 
             {/* BUTTON */}
