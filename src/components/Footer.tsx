@@ -19,11 +19,12 @@ export default function Footer() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2 text-muted-foreground"
-          >
+           className="flex flex-row items-center gap-1 text-3 font-extrabold hover:scale-150 transition">
             <span>© {currentYear} Made with</span>
             <Heart className="h-4 w-4 text-destructive fill-destructive" />
-            <span>by sila's</span>
+            <span className="text-grey-800">SILA</span>
+            <span className="text-blue-400">.</span>
+
           </motion.div>
 
           <motion.div
