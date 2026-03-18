@@ -21,19 +21,19 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
 
-          {/* FOTO KIRI */}
+        {/* FOTO KIRI */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-shrink-0"
-          >
-            <img
-              src="/porto 2.jpeg"
-              alt="Arsila"
-              className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-primary shadow-lg"
-            />
-          </motion.div>
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center md:justify-start"
+>
+         <img
+         src="/porto 3.png" // pastikan PNG transparan
+         alt="Arsila"
+         className="w-72 md:w-[420px] object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]"
+  />
+        </motion.div>
 
           {/* TEKS KANAN */}
           <div className="max-w-3xl text-center lg:text-left">

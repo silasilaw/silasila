@@ -19,7 +19,7 @@ export default function AboutSection() {
         "HELLO!, my name is ARSILA HUMAIRA. I am a student at MAN 1 Banda Aceh. I study in the preparatory class for government service(kedinasan).",
     },
     {
-      title: "In my free time",
+      title: "hoobies",
       content:
         "In my free time, I like doing several activities. One of my hobbies is drawing because it allows me to express my creativity and imagination. I also enjoy dancing, which makes me feel happy and energetic. Besides that, I can cook and sometimes I like to try making simple dishes when I have spare time. These activities help me relax and enjoy my free time.",
     },
