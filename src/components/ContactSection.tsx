@@ -19,20 +19,20 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@developer.com',
-    href: 'mailto:hello@developer.com',
+    value: 'alisrahmaira@gmail.com',
+    href: 'mailto:alisrahmaira@gmail.com',
   },
   {
     icon: Phone,
     label: 'Telepon',
-    value: '+62 812 3456 7890',
-    href: 'tel:+6281234567890',
+    value: '+62 82214342128',
+    href: 'tel:+6282214342128',
   },
   {
     icon: MapPin,
     label: 'Lokasi',
-    value: 'Jakarta, Indonesia',
-    href: '#',
+    value: 'Aceh, Indonesia',
+    href: 'https://www.google.com/search?q=aceh+besar%2C+aceh&oq=aceh+besar%2C+aceh&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCjM0NjA5ajBqMTWoAgiwAgHxBXM7sNobB5iT&sourceid=chrome&ie=UTF-8',
   },
 ];
 

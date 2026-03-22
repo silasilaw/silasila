@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 
 const certificates = [
   {
-    title: 'AWS Certified Solutions Architect',
-    issuer: 'Amazon Web Services',
+    title: 'Juara 1',
+    issuer: 'Tari Kreasi Tingkat kabupaten',
     date: '2024',
     credentialId: 'AWS-SAA-123456',
     image: '🏆',
@@ -13,17 +13,17 @@ const certificates = [
     link: '#',
   },
   {
-    title: 'Google Professional Cloud Developer',
-    issuer: 'Google Cloud',
-    date: '2023',
+    title: 'Mendali Perak',
+    issuer: 'kompetisi SAINS pelajar SE-indonesia(KSPI)',
+    date: '2024',
     credentialId: 'GCP-PCD-789012',
     image: '☁️',
     color: 'from-blue-500/20 to-cyan-500/20',
     link: '#',
   },
   {
-    title: 'Meta Front-End Developer',
-    issuer: 'Meta (Coursera)',
+    title: 'Juara 3',
+    issuer: 'Badminton Tunggal Putri',
     date: '2023',
     credentialId: 'META-FE-345678',
     image: '⚛️',
@@ -31,9 +31,9 @@ const certificates = [
     link: '#',
   },
   {
-    title: 'MongoDB Certified Developer',
-    issuer: 'MongoDB University',
-    date: '2023',
+    title: 'Juara 3',
+    issuer: 'Ratoeh Jaroe',
+    date: '2025',
     credentialId: 'MDB-DEV-901234',
     image: '🍃',
     color: 'from-green-500/20 to-emerald-500/20',
