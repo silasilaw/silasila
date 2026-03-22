@@ -39,24 +39,24 @@ const certificates = [
     color: 'from-green-500/20 to-emerald-500/20',
     link: '#',
   },
-  {
-    title: 'Certified Kubernetes Administrator',
-    issuer: 'CNCF',
-    date: '2022',
-    credentialId: 'CKA-567890',
-    image: '⚙️',
-    color: 'from-indigo-500/20 to-purple-500/20',
-    link: '#',
-  },
-  {
-    title: 'Professional Scrum Master I',
-    issuer: 'Scrum.org',
-    date: '2022',
-    credentialId: 'PSM-I-234567',
-    image: '📋',
-    color: 'from-teal-500/20 to-cyan-500/20',
-    link: '#',
-  },
+  // {
+  //   title: 'Certified Kubernetes Administrator',
+  //   issuer: 'CNCF',
+  //   date: '2022',
+  //   credentialId: 'CKA-567890',
+  //   image: '⚙️',
+  //   color: 'from-indigo-500/20 to-purple-500/20',
+  //   link: '#',
+  // },
+  // {
+  //   title: 'Professional Scrum Master I',
+  //   issuer: 'Scrum.org',
+  //   date: '2022',
+  //   credentialId: 'PSM-I-234567',
+  //   image: '📋',
+  //   color: 'from-teal-500/20 to-cyan-500/20',
+  //   link: '#',
+  // },
 ];
 
 export default function CertificatesSection() {

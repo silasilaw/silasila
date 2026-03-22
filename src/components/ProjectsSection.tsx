@@ -1,70 +1,66 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { ExternalLink, Github, Play, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
+    title: "Drawing",
     description:
-      'Platform e-commerce modern dengan fitur lengkap termasuk payment gateway, inventory management, dan analytics dashboard.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-    images: ['🛒', '💳', '📦'],
-    color: 'from-blue-500/20 to-cyan-500/20',
-    github: '#',
-    demo: '#',
+      "Expressing my creativity through sketches and illustrations that reflect my imagination and feelings.",
+    tags: ["Art", "Sketch", "Creative"],
+    images: ["🎨", "🖌️", "📒"],
+    color: "from-pink-400/20 to-rose-400/20",
   },
   {
-    title: 'Learning Management System',
+    title: "Dancing",
     description:
-      'Platform pembelajaran online dengan video streaming, quiz interaktif, dan progress tracking.',
-    tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
-    images: ['📚', '🎓', '🧠'],
-    color: 'from-purple-500/20 to-pink-500/20',
-    github: '#',
-    demo: '#',
+      "A way for me to feel free, happy, and full of energy while expressing myself through movement.",
+    tags: ["Dance", "Passion", "Energy"],
+    images: ["💃", "🎶", "✨"],
+    color: "from-purple-400/20 to-pink-400/20",
   },
   {
-    title: 'Social Media Dashboard',
+    title: "Cooking",
     description:
-      'Dashboard analytics untuk social media dengan real-time data visualization dan reporting.',
-    tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
-    images: ['📊', '📈', '📉'],
-    color: 'from-orange-500/20 to-red-500/20',
-    github: '#',
-    demo: '#',
+      "Trying simple recipes and enjoying the process of making food in my free time.",
+    tags: ["Cooking", "Fun", "Home"],
+    images: ["🍳", "🍰", "🥄"],
+    color: "from-yellow-400/20 to-orange-400/20",
   },
   {
-    title: 'AI Content Generator',
+    title: "Nature",
     description:
-      'Tool untuk generate konten menggunakan AI dengan integrasi berbagai model language.',
-    tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
-    images: ['🤖', '🧠', '✨'],
-    color: 'from-green-500/20 to-teal-500/20',
-    github: '#',
-    demo: '#',
+      "Finding peace and inspiration from beautiful natural places and quiet moments.",
+    tags: ["Nature", "Peace", "Inspiration"],
+    images: ["🌿", "🍃", "🌻"],
+    color: "from-green-400/20 to-emerald-400/20",
   },
   {
-    title: 'Video Editing Tutorial',
-    description: 'Seri tutorial video editing dengan 100+ episode dan 10k+ subscribers.',
-    tags: ['Premiere Pro', 'After Effects', 'YouTube'],
-    images: ['🎬', '🎥', '📺'],
-    color: 'from-red-500/20 to-orange-500/20',
-    isContent: true,
-    youtube: '#',
+    title: "Memories",
+    description:
+      "Capturing little moments that mean a lot to me and turning them into beautiful memories.",
+    tags: ["Moments", "Photos", "Life"],
+    images: ["📸", "💖", "🌈"],
+    color: "from-sky-400/20 to-blue-400/20",
   },
   {
-    title: 'Coding Tips & Tricks',
-    description: 'Konten tips programming dan best practices untuk developer Indonesia.',
-    tags: ['Instagram', 'TikTok', 'YouTube Shorts'],
-    images: ['💡', '👨‍💻', '⚡'],
-    color: 'from-cyan-500/20 to-blue-500/20',
-    isContent: true,
-    youtube: '#',
+    title: "Learning",
+    description:
+      "Growing and improving myself step by step every day through new experiences and knowledge.",
+    tags: ["Study", "Growth", "Journey"],
+    images: ["📚", "✍️", "🌟"],
+    color: "from-indigo-400/20 to-violet-400/20",
   },
 ];
 
-function CardCarousel({ images, color }) {
+function CardCarousel({
+  images,
+  color,
+}: {
+  images: string[];
+  color: string;
+}) {
   const [index, setIndex] = useState(0);
 
   const next = () => {
@@ -75,14 +71,13 @@ function CardCarousel({ images, color }) {
     setIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  // autoplay
   useEffect(() => {
     const interval = setInterval(() => {
-      next();
+      setIndex((prev) => (prev + 1) % images.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="relative aspect-video rounded-xl overflow-hidden">
@@ -101,21 +96,20 @@ function CardCarousel({ images, color }) {
           transition={{ duration: 0.4 }}
           className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br ${color}`}
         >
-          <span className="text-6xl">{images[index]}</span>
+          <span className="text-6xl md:text-7xl">{images[index]}</span>
         </motion.div>
       </AnimatePresence>
 
-      {/* navigation */}
       <button
         onClick={prev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur p-1 rounded-full"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur p-2 rounded-full"
       >
         <ChevronLeft size={18} />
       </button>
 
       <button
         onClick={next}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur p-1 rounded-full"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur p-2 rounded-full"
       >
         <ChevronRight size={18} />
       </button>
@@ -134,10 +128,14 @@ export default function ProjectsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium mb-2 block">Portfolio</span>
+          <span className="text-primary font-medium mb-2 block">
+            little things i love
+          </span>
+
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Projects &amp; Karya
+            Creative Space
           </h2>
+
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
@@ -152,22 +150,14 @@ export default function ProjectsSection() {
               className="group"
             >
               <div className="h-full p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
-                
                 <CardCarousel images={project.images} color={project.color} />
 
                 <div className="space-y-3 mt-4">
-                  <div className="flex items-center gap-2">
-                    {project.isContent && (
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary font-medium">
-                        Content
-                      </span>
-                    )}
-                    <h3 className="font-display text-lg font-bold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
+                  <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
 
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                  <p className="text-sm text-muted-foreground leading-6">
                     {project.description}
                   </p>
 
@@ -182,36 +172,13 @@ export default function ProjectsSection() {
                     ))}
                   </div>
 
-                  <div className="flex gap-2 pt-2">
-                    {project.github && (
-                      <Button variant="outline" size="sm" className="rounded-full" asChild>
-                        <a href={project.github}>
-                          <Github className="h-4 w-4 mr-1" />
-                          Code
-                        </a>
-                      </Button>
-                    )}
-
-                    {project.demo && (
-                      <Button size="sm" className="rounded-full" asChild>
-                        <a href={project.demo}>
-                          <ExternalLink className="h-4 w-4 mr-1" />
-                          Demo
-                        </a>
-                      </Button>
-                    )}
-
-                    {project.youtube && (
-                      <Button size="sm" className="rounded-full" asChild>
-                        <a href={project.youtube}>
-                          <Play className="h-4 w-4 mr-1" />
-                          Watch
-                        </a>
-                      </Button>
-                    )}
+                  <div className="pt-2">
+                    <Button size="sm" className="rounded-full">
+                      <Play className="h-4 w-4 mr-1" />
+                      Explore
+                    </Button>
                   </div>
                 </div>
-
               </div>
             </motion.div>
           ))}

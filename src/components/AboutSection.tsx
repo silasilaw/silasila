@@ -14,9 +14,9 @@ export default function AboutSection() {
 
   const accordionData = [
     {
-      title: "👤",
+      title: "about me",
       content:
-        "HELLO!, my name is ARSILA HUMAIRA. I am a student at MAN 1 Banda Aceh. I study in the preparatory class for government service(kedinasan).",
+        "HELLO!, saya lahir di Aceh pada tanggal 30 November 2009. Saat ini saya adalah seorang pelajar di MAN 1 Banda Aceh, tepatnya di kelas kedinasan. Saya memilih kelas ini karena saya tertarik dengan hal-hal yang berhubungan dengan dunia kedinasan, seperti instansi pemerintahan dan pelayanan masyarakat.Sebagai pelajar, saya terus berusaha belajar dan mengembangkan diri, baik dalam hal pengetahuan maupun kedisiplinan. Saya ingin mempersiapkan diri sejak sekarang agar bisa meraih cita-cita saya di masa depan, khususnya di bidang yang saya minati.",
     },
     {
       title: "hoobies",
@@ -43,7 +43,7 @@ export default function AboutSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-medium mb-2 block">
-            Tentang Saya
+            su di me ˙𐃷˙
           </span>
 
           <motion.h2
@@ -74,21 +74,22 @@ export default function AboutSection() {
                 className="aspect-square rounded-2xl overflow-hidden glass shadow-card"
               >
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <motion.span
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ repeat: Infinity, duration: 3 }}
-                    className="text-8xl"
-                  >
-                    👨‍💻
-                  </motion.span>
+  
+               <motion.img
+               src="/porto 5.jpeg"
+               alt="Arsila"
+               animate={{ y: [0, -8, 0] }}
+               transition={{ repeat: Infinity, duration: 3 }}
+                className="w-full h-full object-cover"
+               />
                 </div>
               </motion.div>
 
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">
                 <p className="font-display font-bold text-2xl text-gradient">
-                  5+ Tahun
+                  (..◜ᴗ◝..)
                 </p>
-                <p className="text-sm text-muted-foreground">Pengalaman</p>
+                {/* <p className="text-sm text-muted-foreground">▶︎•၊၊||၊|။|||||။၊|။•</p> */}
               </div>
             </div>
           </motion.div>
